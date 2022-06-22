@@ -1,0 +1,167 @@
+/* # para los id */
+#titulo{
+    color: tomato;
+}
+
+/* . para las clases
+.texto {color: slateblue;}
+*/
+
+p.texto {
+    color: slateblue;
+}
+
+p.especial {
+    color: mediumseagreen;
+}
+div p {
+    color:aquamarine;
+}
+div h2 {  /* poria agrupar h2, h3 */
+    color:brown;
+}
+/*   '*'  es el selector universal y asigna las propiedades a los que no tengan nada asignado */
+* {   
+    font-size: 24px;
+   /* color: black; */ /*para colorear enlace */
+}
+/* color hexadecimal empieza # */
+/* .color {
+    /* RGB 3 digitod #000 ·fff*/
+    /* color:#eee ;   */
+    /* RRGGBB 6 digitod #000000 ·ffffff */
+   /* color:ff0000 ;} */
+/* RGB 
+.color {
+   color: rgb(red, green, blue); 
+    color:rgb(255, 0 , 0);
+}
+*/
+.color{
+    /* border: 5px black inset  hay mas opciones */
+    border-style: solid;
+    border-color: blue;
+    border-radius: 5px;
+    border-width: 2rem;
+    /* las medidas absolutas pueden ser = px, cm, mm, in, pt, pc(picas 12 puntos)
+    las medidas relativas = em (se basa en el tamaño de la fuente usada rem(16 px): relativo a la fuente raiz
+    */
+
+}
+#fondo{
+    background-color: rgba(255, 0 , 0);
+    /*opacity: 0.3; */
+    height: 200px;
+  /*   background-image: url('colibri.jpg');
+    background-size: 200px 200px;  
+    background-repeat: repeat-y;
+    background-position: center top; */
+
+    /* resumiendo en una linea */
+    background:#f00 url('colibri.jpg') repeat-y center bottom /100px 100px;
+    /*background-size: 200px 200px;*/
+
+}
+.margen{
+    background-color: chocolate;
+    margin: 15px;
+    padding: 30px 15px 5px;
+    border: solid 1px black;
+    height: 100px;
+    width: 50px;
+    overflow: scroll;
+    outline: 1px solid red;
+}
+.texto{
+    font-family: Roboto, sans-serif;
+    text-align: center;  /* justifi, center,left, rigth*/
+    text-decoration: underline;  /* overline */
+    text-shadow:3px 5px 5px blue ;
+}
+/* a son los link */
+a:link{
+    color: blueviolet;
+}
+a:visited{
+    color: gray;
+}
+a:hover{
+    color: yellow;
+}
+a:active{
+    color: red;
+}
+ul{
+    background-color: cyan;
+    list-style-position: inside;
+    /*list-style-type: none;
+    padding-left: 0; */
+
+}
+table{
+    width: 100%;
+    border-collapse: collapse;  /* para la separacion entre celdas */
+}
+th, td {
+    border: solid 1px #eee;
+    padding: 5px;
+}
+th{
+    background-color: tomato;
+    color: aliceblue;
+    text-align: left;
+}
+tr:nth-child(even){  /* para colorear las tablas por color even es impar */
+    background-color: rgb(213, 213, 213);
+
+}
+tr:hover{
+    background-color: rgb(144, 180, 180);
+    cursor: pointer;
+}
+span{
+    display: block;
+    /* visibility: hidden; */
+    max-width: 300px;
+    background-color: #f00;
+}
+.inline{
+    display: inline;
+}
+#position{
+    position: sticky;  /* relative ,fixed ,absolute, sticky */
+    left: 20px;
+    top: 25px;
+
+}.left{
+    float: left;
+    width: 100px;
+}
+.right{
+    float: right;
+    /* width: 100px; */
+}
+.container{
+    height: 200px;
+}
+.column{
+    /* border: solid 0px #ddd; */
+    /* border-radius: 5px; */
+    margin: 0 ;
+    padding: 10px 0;
+    width: 33.3%;
+}
+.inline-block{
+    display: inline-block;
+    height: 55px;
+    background-color: #f00;
+
+}
+.center{
+    padding: 50px 0 ;
+    text-align: center;
+    width: 200px;
+    /* para centar */
+    margin: 0 auto;  
+    background-color: aqua;
+}

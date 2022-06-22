@@ -1,0 +1,197 @@
+/* importamos fuente externa de Google*/
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Poppins');
+
+/* se incluyen las propiedades que heredarán todos los elementos
+- reseteamos el espaciado y el márgen
+- usamos la propiedad border-box para controlar las medidas de las cajas*/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  color:#000;
+  background-color: rgb(12, 11, 10);
+}
+/** ############################ capa cabecera ################################# **/
+header{
+  background-color: rgb(137, 139, 136);
+  color: rgb(255, 255, 255);
+  min-height: 100px;
+  border-bottom: 4px solid rgb(245, 242, 240);
+
+  /* se usa un contenedor flex, para distribuir los elementos hijos (título y menú)
+   centrado de manera vertical y espaciado horizontalmente */
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+/* enlaces del menú de navegación */
+header nav a{
+  text-decoration: none;
+  background-color: inherit;
+  color:rgb(247, 242, 242);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding:0.5vw;
+}
+header .destacado{
+  background-color: inherit;
+  color:rgb(151, 246, 112);
+}
+header nav a:hover{
+  background-color: rgb(151, 246, 112);
+  color: #000;
+  border-radius: 5px;
+}
+/** ############################ capa central ################################# **/
+section.central{
+  border-top: 1px solid black;
+  text-align: center;
+  background-color: inherit;
+  background: url('img/image1.jpg') no-repeat 0 0;
+  color:rgb(255, 255, 255);
+  min-height: 300px;
+
+  /* se usa un contenedor flex, para distribuir los elementos hijos
+   centrado de manera vertical y horizontal */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.central h1{
+  font-size:2em;
+  margin-bottom: 20px;
+}
+section.central p{
+  font-size:1em;
+  width:50%;
+}
+
+/** ############################ capa principal ################################# **/
+main
+{
+    color:inherit;
+    background-color: rgb(207, 209, 206);
+    margin-bottom:20px;
+}
+/* formulario */
+section  form {
+  min-width: 200px;
+}
+section form input[type="email"]{
+  border: 1px solid rgb(151, 246, 112);
+  height: 18px;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+section form button{
+  border-style: hidden;
+  padding: 4px 6px;
+  color:#000;
+  background-color: rgb(151, 246, 112);
+  border-radius: 5px;
+}
+/* bloque correspondiente a los distintos artículos */
+section.noticias{
+  background-color: rgb(6, 13, 3);
+  color:#fff;
+  text-align: center;
+  /* usamos un contenedor flex, para distribuir uniformemente los artículos
+  a lo largo del ancho de la página*/
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.noticias h1 {
+  font-size: 14px;
+  padding:1vw 5vw;
+}
+/* contenedor de los distintos artículos */
+section.articulos{
+  margin:0 auto 30px;
+  font-size: 0.9em;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width:80%;
+}
+
+/* artículos */
+section.articulos article{
+ color:inherit;
+ background-color: rgba(255, 255, 255, 0.5);
+ padding: 1.5vw;
+ margin:1vw;
+ flex:1 0 30%; /* cada artículo ocupa apx el 30% de la anchura */
+ text-align: center;
+ border-radius: 10px;
+
+}
+section.articulos h3{
+  margin-bottom: 5px;
+}
+section.articulos img{
+  width: 50%;
+}
+/* tabla de los artículos */
+section.articulos table{
+  margin:5px auto;
+}
+section.articulos table th{
+  padding:0.3vw;
+  color:inherit;
+  background-color: #fff;
+  border: 1px solid green;
+}
+section.articulos table td{
+  padding:0.3vw;
+  /* background-color: red; */
+  border: 1px solid green;
+}
+
+/* listas de los artículos */
+section.articulos ul{
+  text-align:left;
+  margin-left: 20px;
+}
+section.articulos ul ul {
+  margin-left: 20px;
+}
+
+/** ############################ capa pié de página ################################# **/
+footer p{
+  position:fixed; /* fijamos la posición al final de la página */
+  bottom:0;
+  background-color: black;
+  color:white;
+  font-size:0.8em;
+  line-height: 30px;
+  width:100%;
+  height:30px;
+  text-align:center;
+}
+
+/* #########################################################################*/
+/* se incluyen un ejemplo de media queries para hacer responsive el contenido */
+@media only screen and (max-width: 768px){
+  header{ /*cambiamos la disposición de los elementos*/
+    flex-direction:column;
+  }
+  section.articulos{ /*los artículos ocuparán el 100% del ancho*/
+    max-width:100%;
+  }
+  section.noticias{ /* cambiamos la disposición de los elementos*/
+    display:flex;
+    flex-direction: column;
+    padding-bottom:10px;
+  }
+}

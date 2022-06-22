@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera Web</title>
+    <style>
+        table,th,td{border:1px solid black}
+    </style>
+</head>
+<body>
+    <table style="width:500px ;">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hola bits</td>
+                <td>Gratis</td>
+            </tr>
+            <tr>
+                <td>Curso práctico</td>
+                <td>19.99</td>
+            </tr>
+            <tr>
+                <td>Producto de nombre mas largo</td>
+                <td>25.99</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td></td>
+            <td>total 49.50</td>
+        </tfoot>
+        
+    </table>
+    <!--lista no ordenada-->
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+    <!--lista ordenada-->
+    <ol>
+        <li value="50">Elemento 1</li> 
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>
+            <ol>
+                <li style="list-style-type: lower-roman">sub elemento 1</li>
+                <li style="list-style-type: lower-roman">sub elemento 2</li>
+                <li style="list-style-type: lower-roman">sub elemento 3</li>
+            </ol>
+        </li>
+    </ol>
+
+    <form action="/formulario" method="POST">  <!--GET o POST  para el envio información-->
+        <label for="nombre">Nombre</label>
+        <input value="yop" type="text" id="nombre" name="nombre" placeholder="Nombre"/>
+        <br>
+        <label for="apellido">Apellido</label>
+        <input value="ape" type="text" id="apellido" name="apellido" placeholder="Apellido"/>
+        <br>
+        <label for ="comentario">Comentario</label>
+        <textarea cols="50" rows="10" id="comentario" placeholder="Ingrese comentario" name="comentario">Valor por defecto</textarea>
+        <br>
+        <!--<input type="submit"/> usaremos otra opcion = buttom es mas personalizable-->
+        <button type="button">Tipo botón</button> <!--buttom(js), reset,submit -->
+        <button type="reset">Tipo reset</button>
+        <button type="submit">tipo submit</button>  
+    </form>
+    <h1>Mi primer heading</h1>
+    <h2>Mi segundo heading</h2>
+    <h3>Mi tercer heading</h3>
+    <h4>Mi cuarto heading</h4>
+    <h5>Mi quiento heading</h5>
+    <h6>Mi sexto heading</h6>
+    <p>Pollito feliz esta muy feliz.</p>
+    <p>pollito triste esta muy triste</p>
+    <hr>
+    <h2>Pollito Cristian</h2>
+    <p>
+        este texto <spam style="color:blue" > mucho mas largo </spam> y es para mostrar<br>
+        la etiqueta spam !
+    </p>
+    <hr>
+    <!--este texto es un comentario-->
+    <a target="_blank" href="https://www.google.es">Ir a Google</a>
+    <img src="img/colibri.jpg" height="200" width="400" />
+
+    
+</body>
+</html>
