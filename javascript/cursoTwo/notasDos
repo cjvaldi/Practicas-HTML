@@ -1,0 +1,111 @@
+// OBJETOS COMPLEJOS PARA TRABAJAR EN DESARROLLO WEB // JASON
+var ordenesDePîzzas = [
+    {
+        "tipo": "margarita",
+        "tamaño": "individual",
+        "precio": 5.67,
+        "toppings": [
+            "extra queso",
+            "champiñones",
+            "piña"
+        ],
+        "paraLlevar": true
+
+    },
+    {
+        "tipo": "cuatro quesos",
+        "tamaño": "familiar",
+        "precio": 5.67,
+        "toppings": [
+            "extra queso",
+            "pimenton"
+        ],
+        "paraLlevar": false
+    }
+    {
+        "tipo": "napolitana",
+        "tamaño": "individual",
+        "precio": 7.67,
+        "toppings": [
+            "extra queso",
+            "pimenton"
+        ],
+        "paraLlevar": false
+    }
+];
+
+console.log(ordenesDePîzzas[0]);
+console.log(ordenesDePîzzas[0].tipo);
+console.log(ordenesDePîzzas[0]["tipo"]);
+console.log(ordenesDePîzzas[0].toppings);
+//--------------------------------------------
+// OBJETOS ANIDADOS  JSON JavaScript Object Notation
+var miReceta = {
+    "descripcion": "mi postre favorito",
+    "costo": 15.6,
+    "ingredientes": {
+        "masa": {
+            "harina": "100 grs",
+            "sal": "1 cucharada",
+            "agua": "1 taza"
+        },
+        "cobertura": {
+            "azucar": "120 grs",
+            "chocolate": "4 cucharadas",
+            "mantequilla": "200 grs"
+        }
+    }
+};
+
+console.log(miReceta.descripcion);
+console.log(miReceta.costo);
+// console.log(miReceta.ingredientes.masa); la masa
+console.log(miReceta.ingredientes.masa.harina);
+console.log(miReceta.ingredientes.masa.sal);
+console.log(miReceta.ingredientes.masa.agua);
+
+// con notacion de corchetes para poder usar variables
+console.log(miReceta.ingredientes.masa["harina"]);
+console.log(miReceta.ingredientes.masa["sal"]);
+
+var xmasa="agua";  // USANDO VARIABLES
+
+console.log(JSON.stringify(miReceta.ingredientes.masa[xmasa]));
+// cobertura
+console.log(JSON.stringify(miReceta.ingredientes.cobertura));   // = toString
+console.log("cobertura \n"+miReceta.ingredientes.cobertura.azucar);
+console.log(miReceta.ingredientes.cobertura.chocolate);
+console.log(miReceta.ingredientes.cobertura.mantequilla);
+
+//--------------------------------------------
+// ARREGLOS ANIDADOS
+var misPlantas = [
+    {
+        tipo: "flores",
+        listas: [
+            "rosas",
+            "tulipanes",
+            "dientes de leon"
+        ]
+    },
+    {
+        tipo: "arboles",
+        listas: [
+            "abeto",
+            "pino",
+            "abedul"
+        ]
+    }
+];
+
+var miPrimeraFlor = misPlantas[0].listas[0];
+console.log(miPrimeraFlor);
+
+var miPrimerArbol = misPlantas[1].listas[0];
+console.log(miPrimerArbol);
+
+//--------------------------------------------
+
+
+//--------------------------------------------
+//--------------------------------------------
