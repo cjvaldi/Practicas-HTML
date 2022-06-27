@@ -1,4 +1,4 @@
-// OBJETOS COMPLEJOS PARA TRABAJAR EN DESARROLLO WEB // JASON
+// OBJETOS COMPLEJOS PARA TRABAJAR EN DESARROLLO WEB // JSON
 var ordenesDePîzzas = [
     {
         "tipo": "margarita",
