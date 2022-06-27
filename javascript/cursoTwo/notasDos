@@ -56,7 +56,25 @@ var miReceta = {
         }
     }
 };
+//
+var miReceta2= {    // SIN EL USO DE COMILLAS
+    descripcion: "mi postre favorito",
+    costo: 15.6,
+    ingredientes: {
+        masa: {
+            harina: "100 grs",
+            sal: "1 cucharada",
+            agua: "1 taza"
+        },
+        cobertura: {
+            azucar: "120 grs",
+            chocolate: "4 cucharadas",
+            mantequilla: "200 grs"
+        }
+    }
+};
 
+//
 console.log(miReceta.descripcion);
 console.log(miReceta.costo);
 // console.log(miReceta.ingredientes.masa); la masa
@@ -78,7 +96,8 @@ console.log(miReceta.ingredientes.cobertura.chocolate);
 console.log(miReceta.ingredientes.cobertura.mantequilla);
 
 //--------------------------------------------
-// ARREGLOS ANIDADOS
+//    ARREGLOS ANIDADOS
+
 var misPlantas = [
     {
         tipo: "flores",
@@ -105,7 +124,749 @@ var miPrimerArbol = misPlantas[1].listas[0];
 console.log(miPrimerArbol);
 
 //--------------------------------------------
+// PROYECTO COLECCION DE DISCOS
+/*
+Tenemos un objeto que representa parte de una colección de álbumes musicales.
+
+Cada álbum tiene un número de identificación único (id)
+asociado a otras propiedades.
+
+No todos los albumes tienes la información completa.
+*/
+
+var coleccionDeDiscos = {
+    7853: {
+        tituloDelAlbum: "Bee Gees Greatest",
+        artista: "Bee Gees",
+        canciones: ["Stayin' Alive"]
+    },
+    5439: {
+        tituloDelAlbum: "ABBA Gold",
+    }
+};
+
+/*
+Define una función actualizarDiscos que tome los siguientes parametros:
+- discos (el objeto que representa la colección de discos).
+- id.
+- propiedad ("artista" o "canciones").
+- valor.
+
+Tu meta es completar la función implementando las siguientes reglas para
+modificar el objeto pasado a la función:
+
+- Si "valor" es una cadena vacia, elimina la propiedad del album correspondiente
+
+- Si "propiedad" es igual a la cadena de caracteres "canciones" pero el álbum
+no tiene una propiedad llamada "canciones" , crea un arreglo vacio y agrega 
+"valor" a ese arreglo.
+
+- Si "propiedad" es igual a la cadena de caracteres "canciones" y "valor" no es 
+una cadena vacia, agregar "valor" al final del arreglo de canciones del 
+álbum correspondiente.
+
+- Si "valor" no es una cadena vacia y "propiedad" no es igual a "canciones", 
+asigna el valor del parametro "valor" a la propiedad.
+Si la propiedad no existe, debes crearla y asignarle este valor.
+
+*/
+
+// tiempo youtube 5.56
+
+function actualizarDiscos(discos, id, propiedad, valor) {
+    if (valor === "") {
+        delete discos[id][propiedad];
+    } else if (propiedad === "canciones") {
+        // -------------------------------
+        // el operador || permite una u otra opcion en la misma linea
+        discos[id][propiedad] = discos[id][propiedad] || []; 
+        //--------------------------------
+        discos[id][propiedad].push(valor);
+    } else {
+        discos[id][propiedad] = valor;
+    }
+};
+
+// console.log(coleccionDeDiscos[7853].tituloDelAlbum);
+
+// actualizarDiscos(coleccionDeDiscos,7853,"tituloDelAlbum","");
+
+// console.log(coleccionDeDiscos[7853].tituloDelAlbum);
+
+// console.log(coleccionDeDiscos[5439].tituloDelAlbum);
+
+// actualizarDiscos(coleccionDeDiscos, 5439, "canciones", "Mamma mia");
+
+// console.log(coleccionDeDiscos[5439].tituloDelAlbum);
+
+console.log(coleccionDeDiscos[5439].artista);
+
+actualizarDiscos(coleccionDeDiscos, 5439, "artista", "ABBA");
+
+console.log(coleccionDeDiscos[5439].artista);
 
 
+//--------------------------------------------
+// CICLOS O BUCLES WHILE / FOR
+
+//  WHILE
+var i=0;
+while (i<=3){
+    console.log("Hola Mundo");
+    i++
+};
+var miArreglo=[];
+var x=0;
+while (x<10){
+    miArreglo[x]=x;
+    x++
+}
+console.log(miArreglo);
+var numeros=[2,3,4,5,6,7,8,9,34]
+while (numeros.length>4){
+    numeros.pop();
+}
+console.log(numeros);
+
+//--------------------------------------------
+// FOR
+var miArreglo=[];
+for (var i = 0; i < 10; i++) {  // i+=2 , i+=3 para los incrementos
+    miArreglo.push(i);
+} 
+console.log(miArreglo);
+
+// ejercicio impar
+
+var miArregloImpar=[];
+for (var i=1; i <20;i+=2){
+    miArregloImpar.push(i);
+}
+console.log(miArregloImpar);
+
+// for hacia atras
+
+for (var i=15;i>=10; i--){  // i-=2 i-=3
+    console.log(i);
+}
+
+// ITERAR SOBRE UN ARREGLO
+
+var miArregloIterado =[4,6,8,2];
+var total=0;
+for (var i=0 ; i<miArregloIterado.length;i++){
+    console.log("Iteracion "+i);
+    console.log(miArregloIterado[i]);
+    total+=miArregloIterado[i];
+}
+console.log(total);
+total=0;
+
+//  forEach
+miArregloIterado.forEach(element => {
+    console.log(element);
+    total+=element;
+});
+console.log(total);
+
+//   
+
+var lenguejes =["JavaScript","Phyton","Java","C++"];
+
+for (var i=0;i<lenguejes.length;i++){
+    console.log(lenguejes[i].toUpperCase());
+}
+
+// O con el forEach
+lenguejes.forEach(element => {
+    console.log(element.toUpperCase());
+});
+//--------------------------------------------
+// FOR ANIDADOS
+var miArreglo=[[1,2,3],[4,5,6],[7,8,9]];
+for (var i=0; i<miArreglo.length;i++){
+    console.log(miArreglo[i]);
+    for (var j=0;j<miArreglo[i].length;j++){
+        console.log(miArreglo[i][j]);
+    }
+};
+//--------------------------------------------
+
+// CICLO "WHILE" se ejecutara mientras sea verdad
+
+var x;
+x=15;
+while (x<10){  // aqui no se ejecutara
+    console.log(x);
+    x++
+};
+
+// CICLO "DO WHILE"  se ejecutara al menos una vez, util para solicitar datos
+x=185;
+do {
+    console.log(x);
+    x++
+}while (x<10);
+//--------------------------------------------
+// BUSQUEDA DE PERFIL
+var contactos =[
+    {
+        nombre:"Nora",
+        apellidos:"Nav",
+        numero:"053789782",
+        gustos:["Pizzas","Programacion"]
+    },
+    {
+        nombre:"Harry",
+        apellidos:"Potter",
+        numero:"09943712684",
+        gustos:["Howarts","Magia"]
+    },
+    {
+        nombre:"Sherlock",
+        apellidos:"Holmes",
+        numero:"0456785783",
+        gustos:["Casos interesantes","Violin"]
+    }
+    ];
+    // PROBANDO EL FOREACH
+    contactos.forEach( n => {
+        console.log(n.nombre);
+        // n.forEach(e => {  // el segundoi forEach no funciona
+        //     console.log(e); 
+        // });
+    });
+    
+    function buscarPerfil(nombre,propiedad){
+        for (var i=0; i<contactos.length; i++){
+            if(contactos[i].nombre===nombre){
+                return contactos[i][propiedad] || "la propiedad no existe.";
+            }
+        }
+        // si no existe
+        return "el contacto no existe"
+    };
+    
+    console.log(buscarPerfil("Nora","gustos")); // ok
+    console.log(buscarPerfil("Harry","apellidos"));
+    console.log(buscarPerfil("Sherlock","numero"));
+    
+    console.log(buscarPerfil("Nora","direccion"));  // no existe la propiedad
+    
+    console.log(buscarPerfil("Bora","direccion"));  // no existe el usuario propiedad
+//--------------------------------------------
+// GENERAR NUMEROS ALEATORIOS Math.random() [0..1]
+
+function generarFraccionAleatoria() {
+    return Math.random();  //[0..1]
+};
+
+console.log(generarFraccionAleatoria());
+console.log(generarFraccionAleatoria());
+console.log(generarFraccionAleatoria());
+
+console.log(Math.random());
+console.log(Math.random());
+console.log(Math.random());
+
+var numeroAleatorio = Math.random();
+console.log(numeroAleatorio);
+
+// GENERAR NUMEROS ALEATORIOS ENTEROS ENTRE RANGOS Math.Floor()
+// para que entre en el rango multiplicar por el numero inmediato superior
+var numeroAleatorioEntre0y19 = Math.floor(Math.random() * 20);
+console.log(numeroAleatorioEntre0y19);
+
+// CREAR FUNCION QUE DEVUELVE EL ALEATORIO ENTERO PASANDO EL VALOR MAXIMO
+function generarEnteroAleatorio(limiteSuperior) {
+    // genera el aleatorio entre 0 y el limite superior
+    return Math.floor(Math.random() * limiteSuperior);
+};
+
+console.log(generarEnteroAleatorio(5));
+console.log(generarEnteroAleatorio(10));
+console.log(generarEnteroAleatorio(100));
+
+// CREAR FUNCION QUE DEVUELVE EL ALEATORIO ENTERO PASANDO EL VALOR minimo y MAXIMO
+function rangoAleatorio(limiteInferior, limiteSuperior) {
+    // genera el aleatorio entre limite minimo y el limite superior
+    return Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1)) + limiteInferior;
+};
+
+console.log(rangoAleatorio(5,10));
+console.log(rangoAleatorio(15,30));
+console.log(rangoAleatorio(35,40));
+
+//--------------------------------------------
+// FUNCION  parseInt()  convierte una cadena de caracteres a numeros
+
+// "5" no es igual a 5
+// NaN not a number
+
+var a = parseInt("5");
+var b = parseInt("7");
+console.log(a + b);
+
+// FUNCION parseInt() con una BASE
+console.log(parseInt("100111", 2)); // binarios
+console.log(parseInt(110111, 2));   // binario sin comillas por ser solo numeros
+
+console.log(parseInt("3E0A", 16)); // hexadecimal
+
+//OPERADOR CONDICIONAL ( TERNARIO )
+function retormarMinimo(x, y) {   // igual que en java   condicion ? true : false
+    return x < y ? x : y;
+}
+console.log(retormarMinimo(4, 7));
+
+var a = 5;
+var b = 9;
+
+console.log(a > b ? a + 2 : b * 3);
+
+// MULTIPLES OPERADORERES CONDICIONALES  O TERNARIOS
+function compararNumeros(a, b) {  // función normal
+    if (a == b) {
+        return "a y b son iguales";
+    } else if (a > b) {
+        return "a es mayor que b";
+    } else {
+        return "b es mayor que a";
+    }
+}
+//   funcion equivalente con ternario
+function compararNumerosTernario(a, b) {  // función con ternario
+    return a == b ? "a y b son iguales" : a > b ? "a es mayor que b" : "b es mayor que a";
+}
+
+console.log(compararNumerosTernario(15,15));
+console.log(compararNumerosTernario(10,15));
+console.log(compararNumerosTernario(100,15));
+//--------------------------------------------
+// VAR, LET, CONST
+// VARIABLES var VS LET
+var campista ="James";
+var campista ="David";  // var permite volvera a declarar la variable sin error
+
+let campista ="James"; // ncaught SyntaxError: Identifier 'campista' has already been declared 
+let campista ="David";  // let no permite volvera a declarar la variable // da error
+campista="Cristian" ;  // solo se podria reasignar un valor
+
+
+/* AMBITO VAR VS LET
+var crea global o local y solo se usa en el ambito de creación
+let es mas restrictivo en funcion del ambito / se recomienda para bloques 
+*/
+var numeroGlobal =5 ;
+function devuelve(numero) {
+    var numeroLocal = 10;
+    return numero;
+};
+console.log(devuelve(numeroGlobal));
+console.log(numeroGlobal);
+// console.log(numeroLocal);   // Uncaught ReferenceError: numeroLocal is not defined en global
+ 
+for (var i=0;i<3;i++){
+    console.log(i);
+}
+console.log("Variable :"+i);  // la variable sigue viva por que se encuentra en global flor
+
+for (let j=0;j<3;j++){
+    console.log(j);
+}
+console.log("Variable :"+j);  // Uncaught ReferenceError: j is not defined  por que LET del flor
+
+//--------------------------------------------
+
+// CONSTANTES const se escrien en MAY, SE DECLARA Y SE INICIA CON UN VALOR
+const MICONSTANTE = 10;
+
+console.log(MICONSTANTE);
+
+//MICONSTANTE=30;           //  app.js:6 Uncaught TypeError: Assignment to constant variable.
+
+function calcularAreaCirculo(radio){
+    const PI= 3.141516;
+    return radio<0? undefined : PI * (radio ** 2);
+}
+
+console.log(calcularAreaCirculo(5));
+console.log(calcularAreaCirculo(10));
+
+//--------------------------------------------
+//  MUTAR ARREGLO DECLARADO CON CONST
+
+const MI_ARREGLO = [1,2,3,4];
+
+// MI_ARREGLO = [5,6,7,8] ;  //    ERROR al hacer asignacion directa
+
+// SOLO PERMITE REASIGNAR
+MI_ARREGLO[0]=5;
+MI_ARREGLO[1]=6;
+MI_ARREGLO[2]=7;
+MI_ARREGLO[3]=8;
+
+console.log(MI_ARREGLO);
+
+// CREAR UN OBJETO INMUTABLE  Object.freeze(objeto);
+
+let colores={
+    "verde":"#10e04b",
+    "azul":"#b50e0",
+    "negro":"#000000",
+    "blanco":"#ffffff"
+};
+
+Object.freeze(colores);  // congela o bloquea
+
+colores.amarillo ="#fff200";  // no se le puede agragar propiedades nuevas
+deletecolores.verde="#fff200"; // no permite reasignar
+delete colores.verde;   // no lo puede eliminar
+console.log(colores);
+
+//--------------------------------------------
+
+// FUNCIONES ANONIMAS a FUNCIONES FLECHA
+//  son utiles cuando se quiere pasar argumentos a otr funcion
+
+const fecha = function () {   // FUNCION ANONIMA
+    return new Date();
+};
+
+// FUNCION FLECHA
+const fecha2 = () => new Date();
+
+// FUNCIONES FLECHA CON PARAMETROS
+const sumarTres = (x) => x + 3;
+
+console.log(sumarTres(4));
+
+const concatenarArreglos = function (arr1, arr2) {
+    return arr1.concat(arr2);
+}
+console.log(concatenarArreglos([1, 2, 3], [4, 5]));
+
+// FUNCION FLECHA
+const miConcatArregloFlecha = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(miConcatArregloFlecha([1, 2, 3], [4, 5]));
+
+// FUNCION FLECHA CON MAS DE UNA LINEA
+const miSuma = function (a, b) {
+    let num = 6;
+    return a + b + num;
+}
+// PASAMOS A FUNCION FLECHA
+const miSumaFlecha = (a, b) => {
+    let num = 6;
+    return a + b + num;
+}
+
+console.log(miSuma(3, 3));
+console.log(miSumaFlecha(3, 3));
+//--------------------------------------------
+// VALORES POR DEFECTO PARA PÁRAMETROS EN FUNCIONES NORMALES Y FLECHAS
+
+const incrementar = (num, valor = 1) => num + valor;
+
+console.log(incrementar(5));
+console.log(incrementar(5, 3));
+
+// OPERADOR REST  "...args"  cuando no se sabe los argumentos a pasas
+function miFuncion(...args) {  // ...arg  para los argumentos
+    console.log(args);
+};
+
+miFuncion(1);
+miFuncion(1, 2, 3);
+miFuncion([1, 2, 3]);
+miFuncion([1, 2, 3], [4, 5, 6]);
+
+const sumar = (...args) => {
+    return args.reduce((a, b) => a + b, 0);
+    // .reduce() con estos argumentos suma los elementos del arreglo y retorna el resultado
+    // pasamos una funcion flecha como argumento
+};
+
+//--------------------------------------------
+
+
+// OPERADOR SPREAD  DESCOMPONE LOS ARGUMENTOS  (...ARREGLO)
+
+const numeros = [1, 2, 3];
+
+function sumar(x, y, z) {
+    return x + y + z;
+};
+
+console.log(sumar(...numeros));  // devuelve internamente numeros[0],numeros[1],numeros[2]
+
+// SINTAXIS DE DESESTRUCTURACION
+const usuario = {
+    nombre: "Gino Smith",
+    edad: 34
+};
+/* esta seria la forma general
+
+const nombre = usuario.nombre;
+const edad = usuario.edad;
+*/
+// el nuevo formato seria crear las variables que se recogen  del objeto y se le asigna el nombre
+
+const { nombre, edad } = usuario;
+
+// otro ejemplo
+var coordenadas = {
+    x: 4,
+    y: 6,
+    z: 12
+};
+/* para evitar el error
+var x = coordenadas.x;   // esto seria la forma general
+var y = coordenadas.y;
+var z = coordenadas.z;
+
+*/
+// con el nuevo  estandar
+
+const { x, y, z } = coordenadas; // asigna los valores del objeto a las variables
+
+// SINTAXIS DE DESESTRUCTURACION : OBJETOS ANIDADOS
+const usuarioA = {
+    jhonDoe: {
+        edades: 27,
+        correo: "jhonDoe@correo.com"
+    }
+};
+const { jhonDoe: { edades, correo } } = usuarioA
+console.log(edades);
+console.log(correo);
+
+// asignarle otro nombre a la variables
+
+const { jhonDoe: { edades: edadUsuario, correo: correoUsuario } } = usuarioA;
+console.log(edadUsuario);
+console.log(correoUsuario);
+
+const PRONOSTICO_LOCAL ={
+    "ayer":{
+        minima:61,
+        maxima:75
+    },
+    "hoy":{
+        minima:64,
+        maxima:77
+    },
+    "mañana":{
+        minima:68,
+        maxima:80
+    }
+};
+
+// ejemplo
+const minimoHoy = PRONOSTICO_LOCAL.hoy.minima;
+const maximoHoy = PRONOSTICO_LOCAL.hoy.maxima;
+
+console.log(minimoHoy, maximoHoy);
+//otro ejemplo
+const {hoy:{minima:minimaHoy}}=PRONOSTICO_LOCAL;
+console.log(minimaHoy);
+
+const {hoy:{maxima:maximaHoy}}=PRONOSTICO_LOCAL;
+console.log(maximaHoy);
+
+//otro ejemplo
+const {hoy:{minima:miniHoy,maxima:maxiHoy}}=PRONOSTICO_LOCAL;
+console.log(miniHoy, maxiHoy);
+
+//--------------------------------------------
+// SINTAXIS DE DESESTRUCTURACION : ARREGLOS
+var a;
+var b;
+var c;
+[a,b,,,c] =[1,2,3,4,5];
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+// ejemplo de cambio de asignacion de valores
+
+var d = 6;
+var e = 8;
+
+[d,e]=[e,d];
+
+console.log(d);
+console.log(e);
+//--------------------------------------------
+// EJEMPLO DE DESESTRUCTURACION
+
+var a;
+var b;
+var arr;
+
+[a,b, ...arr]=[1,2,3,4,5,6,7];
+
+console.log(a);
+console.log(b);
+console.log(arr);
+
+const arregloInicial=[1,2,3,4,5,6,7,8];
+
+function removerTresPrimerosElementos(arreglo){
+    const [, , , ...nuevoArreglo]=arreglo;
+    return nuevoArreglo;
+};
+console.log(removerTresPrimerosElementos(arregloInicial));
+
+// SINTAXIS DE DESESTRUCTURACION: PASAR OBJETO COMO ARGUMENTO
+var nuevoPerfilCliente={
+    nombre:"Jane Doe",
+    edad:24,
+    nacionalidad:"Española",
+    ubicacion:"España"
+};
+
+const actualizarPerfil = (informacionDePerfil)=>{
+    const {nombre, edad, nacionalidad,ubicacion}=informacionDePerfil;  // pasa los valores del obj a las variables
+    console.log(informacionDePerfil); // mostrara el obj pasado
+    console.log(nombre);   
+    console.log(edad);
+    console.log(nacionalidad);
+    console.log(ubicacion);
+};
+
+actualizarPerfil(nuevoPerfilCliente);
+
+// otra forma
+const actualizarPerfilCampos = ({nombre, edad})=>{  // los campos del objeto
+    console.log(nombre);   
+    console.log(edad);
+};
+
+actualizarPerfilCampos(nuevoPerfilCliente);
+
+const estadisticas ={
+    max:56.78,
+    desviacionEstandar:4.34,
+    mediana:34.54,
+    moda:23.87,
+    min:-075,
+    promedio:35.85
+};
+
+// funcion fecla que calcula la media
+//a esta funcion se le pasa los campos necesarios del objeto, 
+//asi simplemente se le pasa el objeto en la llamada
+
+const mitad=({max,min})=>(max+min)/2.0;
+
+console.log(mitad(estadisticas));   // pasamos el obj en la llamada
+
+//--------------------------------------------
+
+/* PLANTILLAS LITERALES o plantillas de cadenas
+
+Caracteristicas:
+- "  `  " 
+- Puede contener comillas simples o dobles.
+- Las lines se preservar como se escriben en el codigo.
+- Para reemplazar una variable se escribe ${variable}.
+- Dentro de ${variable} tambien se pueden escribir expresiones.
+
+*/
+
+var a =6;
+console.log(`El valor de a es ${a} `);
+
+var nombre = "nora";
+var edad =6;
+
+console.log(`Mi nombre es ${nombre} y tengo ${edad} años.`);
+
+var miArreglo=[1,2,3,4];
+console.log(`El arreglo es ${miArreglo}`);
+console.log(`El arreglo es ${JSON.stringify(miArreglo)}`); 
+
+// objeto
+var persona={
+    nombre:"Gino Cass",
+    edad:10
+};
+// pasamos los datos a la variable o constante
+const SALUDO = `¡Hola! Mi nombre es ${persona.nombre} y tengo ${persona.edad} años.`;
+console.log(SALUDO);
+
+//--------------------------------------------
+// CREAR OBJETOS DE FORMA CONCISA
+// forma general
+const crearPersona = (nombre, edad, idioma) => {
+    return {
+        nombre: nombre,
+        edad: edad,
+        idioma: idioma
+    };
+};
+console.log(crearPersona("Gino Smith", 28, "Español"));
+
+// ahora la forma concisa usando tambien una funcion flecha
+const crearPersonaConcisa = (nombre, edad, idioma) => ({nombre,edad,idioma});
+
+console.log(crearPersonaConcisa("Gino Smith", 28, "Español"));
+
+//--------------------------------------------
+// METODOS EN LOS OBJETOS
+const persona = {
+    nombre:"Isabel",
+    presentarse:function(){   // METODO
+        return`!Hola! Mi nombre es ${this.nombre}. `;   // this para usar la referencia
+    }
+};
+
+console.log(persona.presentarse());  // llamada a la funcion
+
+// ESTANDAR ES6 ??
+const personaDos = {
+    nombre:"Isabelo",
+    presenta(){  // creamos la funcion O METODO asociada al objero
+        return`!Hola! Mi nombre es ${this.nombre}. `;   // this para usar la referencia
+    }
+};
+
+console.log(personaDos.presenta());  // llamada a la funcion
+
+//--------------------------------------------
+// DEFINIR UNA CLASE
+class TransbordadorEspacial {   // las clases empiezan con MAY
+    constructor(planeta) {
+        this.planeta = planeta;
+    }
+}
+
+
+var zeus = new TransbordadorEspacial("Jupiter");
+console.log(zeus.planeta);
+
+var apolo = new TransbordadorEspacial("Marte");
+console.log(apolo.planeta);
+
+// 
+class Mascota {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad
+    }
+}
+
+var miMascota = new Mascota("Cachito", 2);
+console.log(miMascota.nombre);
+console.log(`mi mascota ${miMascota.nombre}`);
+
+var tuMascota= new Mascota("Bubu", 2);
+console.log(tuMascota.nombre);
+
+//--------------------------------------------
+//--------------------------------------------
 //--------------------------------------------
 //--------------------------------------------

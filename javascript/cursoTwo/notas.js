@@ -806,7 +806,7 @@ var miCuaderno = {
 console.log(miCuaderno.hasOwnProperty("color"));  // true  COMPRUEBA SI EXISTE LA PROPIEDAD
 console.log(miCuaderno.hasOwnProperty("PAIS"));  // FALSE  COMPRUEBA SI EXISTE LA PROPIEDAD
 
-// APÑICANDO hasOwnProperty EN UNA FUNCION
+// APLICANDO hasOwnProperty EN UNA FUNCION
 
 function verificaPropiedad(obj, propiedad) {
     if (obj.hasOwnProperty(propiedad)) {
