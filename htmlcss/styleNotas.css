@@ -1,0 +1,56 @@
+/* hay 3 opciones para el uso de CSS
+1 estilos en linea
+<h2 style="color:blue">AppdeGAtos</h2>
+
+2 <style></style>
+añadimos el elelmenot <style> en <head>
+<head>
+<title>PracticaAppDeGatos</title>
+   <style>
+      h2{ 
+        color: red;
+      }
+      h3{
+        color:green;
+      }
+      p{
+        color:blueviolet;
+      }
+    </style>
+</head>
+
+3 archivo.css 
+creamos el archivo.css para aplicar directamente  / es la recomendable
+
+
+google fonts
+para las letras primero pegar link con los tipos de fuentes en el head
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&family=EB+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+
+y luego en css usar font family de la  letra
+
+font-family: 'EB Garamond', serif;
+font-family: 'Diplomata SC', cursive;
+
+podeis dar unalñista de fuentes por si no lo la tuviera activa
+
+NOTA A TODO LO QUE LE PONGAS CLASS LE PODRAS PERSONALIZAR
+
+id nombre ubuci de cada elemento
+
+RECORDAR SIEMPRE EL ORDEN DE LOS ESTILOS SE APLICA DE ABAJO A ARRIBA
+
+PADDING
+  padding: 2px 5px;   con respecto a la imagen o elemento
+
+  border-width: 2px;  /* ancho de la linea de borde del elemento 
+
+  margin:3px 3px 5px 1px; /* con rescpecto al contenedor 
+  
+ATRIBUTOS
+
+SELECTORES DE ATRIBUTOS
+
+*/

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PracticaAppDeGatos</title>
+  <!--<style> en el head -->
+  <!-- <style>
+      h2{ 
+        color: red;
+      }
+      h3{
+        color:green;
+      }
+      p{
+        color:blueviolet;
+      }
+    </style> -->
+
+  <!-- fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&family=EB+Garamond:ital,wght@1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- con un archivo CSS -->
+  <link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- estilo css en linea style=atributo:valor -->
+  <!-- <h2 style="color:blue">AppDeGatos</h2> -->
+  <h2 id="titulo-app-gatos">AppDeGatos</h2>
+
+  <!-- TODO agregar enlaces de gatos -->
+  <main>
+    <h3>Imágenes de Gatos :</h3>
+    <!-- rel="noopener noreferrer" para evitar ataques  -->
+    <p>Haz clip para ver mas <a href="https://www.freecodecamp.org/espanol/" alt="Pagina para aprender a programar"
+        target="_blank" rel="noopener noreferrer">imagenes de gatos.</a></p>
+    
+        <!-- creando enlaces directos a los parrafos con a  -->
+    <a href="#parrafo-1">Párrafo 1</a>
+    <a href="#parrafo-2">Párrafo 2</a>
+    <a href="#parrafo-3">Párrafo 3</a>
+    <a href="#parrafo-4">Párrafo 4</a>
+
+    <!-- poniendo un enlace a la imagen <a>  </a>-->
+    <!-- el simolo # eb href="#" no lleva  a ningun lado ayuda para mantener los enlace a una pagina que no se ha creado-->
+    <!-- <a href="#" target="_blank" rel="noopener noreferrer"> -->
+    <a href="https://www.freecodecamp.org/espanol/learn" target="_blank" rel="noopener noreferrer">
+      <img src="/img/gato1.jpg" class="bordes-redondeados" alt="Un gato bonito mirando al cielo">
+    </a>
+
+    <!-- linea horizontal -->
+    <hr>
+
+    <!-- listas no ordenadas -->
+    <!-- palabras en cursiva <em></em> -->
+    <h3>Listas de gatos </h3>
+    <!-- la etiqueta div es un "contenedor" para aplicar css o atributos -->
+    <div class="contenedor-listas">
+      <p>Cosas que los gatos <em>aman</em></p>
+      <ul id="lista-gatos-aman">
+        <li>Los ratones</li>
+        <li>las luces</li>
+        <!-- para tachar palabras <s></s> -->
+        <li><s>el pescado</s></li>
+      </ul>
+      <img src="/img/gato2.jpg" class="imagen-de-gatos"  alt="Un gato mirandote">
+
+      <!-- listas ordenadas  -->
+      <!-- palabras importantes <strong></strong> -->
+      <p>Cosas que los gatos <strong>odian</strong></p>
+      <ol id="lista-gatos-odian">
+        <li>El agua</li>
+        <li>Truenos</li>
+        <li>Otros gatos</li>
+      </ol>
+    </div>
+    <img id="imagen-gatitos" src="/img/gatitos.jpg" class="imagen-de-gatos" alt="tres gatitos muy lindos">
+    <!-- 
+      formularios
+      placeholder envia un texto informativo
+      requerid campo requerido osea debe contener datos
+     -->
+    <form action="/enviar-respuesta">
+
+      <!-- botones de radio , con la etiquetal label ya lo reconoce  , el input tipo radio no hay necesidad de cerrrarlo  -->
+      <!-- grupo de botones de radios atributio "name" ;"value" manda el valor al servidor-->
+      <!-- salto de linea <br> -->
+      <label for="interior"><input id="interior" type="radio" value="interior" name="interior-exterior" checked>Interior
+      </label><br>
+      <label for="exterior"><input id="exterior" type="radio" value="exterior" name="interior-exterior">Exterior
+      </label><br>
+
+      <!-- Casillas de verificacion funciona igual que los de radio , label ,name , id  ; cheked para valor por defecto-->
+      <label for="carinoso"><input id="carinoso" type="checkbox" value="carinoso" name="personalidad">Cariñoso </label>
+      <label for="perezoso"><input id="perezoso" type="checkbox" value="perezoso" name="personalidad" checked>Perezoso
+      </label>
+      <label for="energico"><input id="energico" type="checkbox" value="energico" name="personalidad">Energico </label>
+
+      <!-- texto y botn enviar -->
+      <input type="text" placeholder="URL la foto de tu gato" required>
+      <button type="submit">Enviar</button>
+
+
+
+    </form>
+    <!-- para que los textos se amolden al ancho de pagina Ctrl ??  -->
+    <h3 id="parrafo-1">Parrafo 1</h3>
+    <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot,
+      hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere
+      rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed
+      everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+    <h3 id="parrafo-2">Parrafo 2</h3>
+    <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy
+      fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles
+      chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched
+      sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+    <h3 id="parrafo-3">Parrafo 3</h3>
+    <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture,
+      especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll
+      over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+    <h3 id="parrafo-4">Parrafo 4</h3>
+    <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to
+      internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on
+      owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand
+      run outside as soon as door open yet destroy couch.</p>
+  </main>
+  <footer>
+    <!-- small es mas pequeño -->
+    <p><small> de autor - Cristian Jacson</small></p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+/* selector universal *   */
+/* selector de clases class  '.class'  */
+
+.lista-de-gatos{
+  color: chocolate;
+}
+
+/* tamaño de letras  con selector de tipo */
+h2,
+h3{
+  font-size: 20px;
+  font-family: 'EB Garamond', serif;
+
+}
+/* li{
+  color: blue;
+  font-size: 15px;
+  font-family: 'EB Garamond', serif;
+} */
+p{
+  font-family: 'Diplomata SC', cursive;
+
+}
+.imagen-de-gatos{
+  width: 200px;
+  height: auto;
+
+  padding: 2px 5px;   /* con respecto a la imagen */
+
+  border-width: 2px;  /* ancho */
+
+  margin:3px 3px 5px 1px; /* con rescpecto al contenedor */
+
+  
+  border-radius: 5px;
+  border-color: rgb(5, 250, 99);
+  border-style: solid double dotted;
+  border-style: groove;
+}
+.bordes-redondeados{
+  width: 200px;
+  border-radius: 50%;
+  /* border-radius: 150px; */
+}
+
+div{ 
+  background-color: aquamarine;
+}
+
+.contenedor-listas{
+  background-color: rgb(168, 192, 60);
+}
+/* para los id # */
+
+#titulo-app-gatos{
+  font-size: 30px;
+  color: brown;
+}
+#imagen-gatitos{
+  border-radius: 50%;
+}
+#lista-gatos-aman{
+  color: blue;
+}
+#lista-gatos-odian{
+  color: rgb(206, 129, 41);
+}
+
+/* selector de elementos por atributos */
+img[alt]{
+  border-radius: 50%;
+}
+
+[type="radio"]{  
+  margin: 20px;
+}
+input[type="checkbox"]{  
+  margin: 20px;
+}
+
+a[href="]
