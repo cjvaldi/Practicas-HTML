@@ -1,81 +1,206 @@
 /* selector universal *   */
 /* selector de clases class  '.class'  */
 
-.lista-de-gatos{
+/* todo lo que aplique al body será general*/
+body{
+  color: rgba(210, 81, 30, 0.39);
+  background-color: aquamarine;
+}
+
+
+.lista-de-gatos {
   color: chocolate;
 }
 
 /* tamaño de letras  con selector de tipo */
 h2,
-h3{
+h3 {
   font-size: 20px;
   font-family: 'EB Garamond', serif;
 
 }
+
 /* li{
   color: blue;
   font-size: 15px;
   font-family: 'EB Garamond', serif;
 } */
-p{
+p {
   font-family: 'Diplomata SC', cursive;
 
 }
-.imagen-de-gatos{
+
+.imagen-de-gatos {
   width: 200px;
   height: auto;
 
-  padding: 2px 5px;   /* con respecto a la imagen */
+  padding: 2px 5px;
+  /* con respecto a la imagen */
 
-  border-width: 2px;  /* ancho */
+  border-width: 2px;
+  /* ancho */
 
-  margin:3px 3px 5px 1px; /* con rescpecto al contenedor */
+  margin: 3px 3px 5px 1px;
+  /* con rescpecto al contenedor */
 
-  
+
   border-radius: 5px;
   border-color: rgb(5, 250, 99);
   border-style: solid double dotted;
   border-style: groove;
 }
-.bordes-redondeados{
+
+.bordes-redondeados {
   width: 200px;
   border-radius: 50%;
   /* border-radius: 150px; */
 }
 
-div{ 
+div {
   background-color: aquamarine;
 }
 
-.contenedor-listas{
+.contenedor-listas {
   background-color: rgb(168, 192, 60);
 }
+
 /* para los id # */
 
-#titulo-app-gatos{
+#titulo-app-gatos {
   font-size: 30px;
   color: brown;
 }
-#imagen-gatitos{
+
+#imagen-gatitos {
   border-radius: 50%;
 }
-#lista-gatos-aman{
+
+#lista-gatos-aman {
   color: blue;
 }
-#lista-gatos-odian{
+
+#lista-gatos-odian {
   color: rgb(206, 129, 41);
 }
 
 /* selector de elementos por atributos */
-img[alt]{
+img[alt] {
   border-radius: 50%;
 }
 
-[type="radio"]{  
-  margin: 20px;
-}
-input[type="checkbox"]{  
+[type="radio"] {
   margin: 20px;
 }
 
-a[href="]
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+a[hrer="https://www.freecodecamp.org/espanol/"] {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* unidades absolutas y relativas
+px pixel
+vw depente tamano pantalla
+em depende tamañoi letra
+*/
+#contenedor-principal {
+  color: white;
+  padding: 5px;
+  font-size: 15px;   /* fuente padre de contenedor*/
+  background-color: yellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.rectangulo {
+  padding: 5px;
+  margin: 5px;
+}
+
+.px {
+  background-color: crimson;
+  width: 200px;
+}
+/* relativa al tamaño de la pantalla*/
+.vw {
+  background-color: rgb(43, 226, 89);
+  width: 20vw;
+}
+
+/*relativo al tamaño de la fuente */
+.em {
+  background-color: green;
+  width: 15em;
+  font-size: 1.5em; /* con relacion a la fuente del padre*/ 
+}
+/* priorizar estilos sobre otros 
+cogera siempre el orden en css
+*/
+/* prioridad  class y id 
+el id tiene prioridad sobre la clase 
+aunque se escriba antes en el CSS
+# id
+.class
+
+*/
+
+/* prioridad  id , class y style
+
+id="titulo" style="color:purple" class="texto"
+en este caso el style en linea tiene prioridad
+"!important"  -es para que tenga prioridad
+
+*/
+
+/* colores hexadecimales 
+0-9 A-F  16 digitos se puede escribir en may o min
+#000000 (Rojo verde azul )-> negro
+#FFFFFF blanco
+colour picker para ver la paleta de colores
+
+tambien se puede usar 3 digitos #000 , #fff si cada para es el mismo digito
+*/
+
+/* valores RGB
+backgroud-color:RGB(255, 255, 0)
+separado por coma y espacio
+
+backgroud-color:rgba(255, 255, 0 0.267) transparencia
+a -> alfa ->transparencia
+
+*/
+/*  ------------------------- 
+    varibles css
+pinguinos
+"--variable css"
+--pinguino-piel=red;
+--pinguino-mejilla: pink;
+--pinguimp-barriga:white;
+
+
+.pinguino-superior{
+  background: var(--pinguino-piel);
+}
+
+** valores de respaldo 
+para errores en los nombres de variables
+background:var(--pinguien-piel, black);
+
+internet Explorer no reconoce variables css asi que se
+asigna primero el color de respaldo
+background:black;
+background:var(--pinguien-piel, black);
+
+herencia de variables
+:root{  seria el padre de todo
+  aqui se podria poner las variables para hacer la global
+  --pinguimp-barriga:white;
+}
+cambiar variable para un area especifica
+se puede volver a definir en otra seccion
+
+
+*/
